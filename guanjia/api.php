@@ -43,7 +43,7 @@ if(!$guanjia_time){
 if (time()-$guanjia_time > 600) {
     guanjia_failRsp(1009, "password error", "该token已超时！");
 }
-//发布密码校验
+//token校验
 if (empty($_REQUEST['guanjia_token']) || md5($guanjia_time.$guanjia_token) != $_REQUEST['guanjia_token']) {
     guanjia_failRsp(ERROR_INVALID_PWD, "password error", $ecms_charset_config['msg']['fail_password_wrong']);
 }
@@ -586,7 +586,7 @@ function _GetHtml($classid,$id,$add,$ecms=0,$doall=0){
             $add[$stf]=GetTxtFieldText($add[$stf]);
         }
     }
-    eAutodo_AddDo('ReNewsHtml',$classid,$id,0,0,0);//moreportdo
+    //eAutodo_AddDo('ReNewsHtml',$classid,$id,0,0,0);//moreportdo
     $GLOBALS['navclassid']=$add[classid];
     $GLOBALS['navinfor']=$add;
     //取得内容模板
