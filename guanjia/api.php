@@ -38,10 +38,10 @@ foreach($_REQUEST as $key => $value) {
 
 $guanjia_time = intval($_REQUEST['guanjia_time']);
 if(!$guanjia_time){
-    guanjia_failRsp(1008, "password error", "time不存在");
+    guanjia_failRsp(1408, "password error", "time不存在");
 }
 if (time()-$guanjia_time > 600) {
-    guanjia_failRsp(1009, "password error", "该token已超时！");
+    guanjia_failRsp(1409, "password error", "该token已超时！");
 }
 //token校验
 if (empty($_REQUEST['guanjia_token']) || md5($guanjia_time.$guanjia_token) != $_REQUEST['guanjia_token']) {
@@ -361,14 +361,14 @@ function genDocData($post,$tbname) {
     //作者处理
     $userid=0;
     $username='';
-    if($post["writer"] == "rand_users"){//随机管理员
+    if($post["author"] == "rand_users"){//随机管理员
         $row = $empire->fetch1("select username from {$dbtbpre}enewsuser limit 1");
         $username = $row["username"];
-    }else if($post["writer"] == "rand_members"){//随机会员
+    }else if($post["author"] == "rand_members"){//随机会员
         $row = $empire->fetch1("select username from {$dbtbpre}enewsmember order by rand() limit 1");
         $username = $row["username"];
     }else{
-        $username = $post["writer"];
+        $username = $post["author"];
     }
 
     list($userid, $username) = getUserInfo($username, $newstime);
@@ -376,7 +376,7 @@ function genDocData($post,$tbname) {
     if (empty($userid)|| empty($username)) {
         db_close();
         $empire = null;
-        guanjia_failRsp(ERROR_PARA, "invalid user：" . $_REQUEST["writer"], $ecms_charset_config['msg']['fail_writer']);
+        guanjia_failRsp(ERROR_PARA, "invalid user：" . $_REQUEST["author"], $ecms_charset_config['msg']['fail_writer']);
     }
 
 //phome_enewsmod
