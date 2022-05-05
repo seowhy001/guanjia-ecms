@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1a74145-f089-44bf-8972-64d1e9896888" name="Default Changelist" comment="兼容 7.2版本">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guanjia/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/guanjia/api.php" afterDir="false" />
-    </list>
+    <list default="true" id="b1a74145-f089-44bf-8972-64d1e9896888" name="Default Changelist" comment="兼容 7.2版本" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,7 +33,7 @@
       <option name="presentableId" value="Default" />
       <updated>1651128874470</updated>
       <workItem from="1651128876031" duration="1199000" />
-      <workItem from="1651714539461" duration="2023000" />
+      <workItem from="1651714539461" duration="2854000" />
     </task>
     <task id="LOCAL-00001" summary="兼容 7.2版本">
       <created>1651129429185</created>
